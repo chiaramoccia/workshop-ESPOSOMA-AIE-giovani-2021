@@ -26,7 +26,7 @@ library(ggplot2)
 
 
 ## inserire il percorso alla cartella
-path <- file.path("F:/EXPOSOME-workshop-AIE2021--main")
+path <- file.path("F:/workshop-ESPOSOMA-AIE-giovani-2021-main")
 
 # rexposome richiede in input tre diversi dataset:  
 # 1.	Description Data
