@@ -7,14 +7,14 @@
 # "Introduzione all'approccio esposomico in epidemiologia con il software R"
 
 #                     Chiara Moccia & Antonio D'Errico  
-# Dottorandi Dip.to Scienze Mediche, Epidemiologia dei Tumori, Universit‡ di Torino
+# Dottorandi Dip.to Scienze Mediche, Epidemiologia dei Tumori, Universit√† di Torino
 #                     
 
 #Install package rexposome>>>>eseguire i due comandi successivi solo alla prima esecuzione dello script 
 install.packages("devtools")
 devtools::install_github("isglobal-brge/rexposome")
 # title = {rexposome: Exposome exploration and outcome data analysis},
-# author = {Carles Hernandez-Ferrer and Juan R. Gonzalez and Xavier Escrib‡-Montagut},
+# author = {Carles Hernandez-Ferrer and Juan R. Gonzalez and Xavier Escrib√†-Montagut},
 # year = {2021},
 # note = {R package version 1.15.0},
 
@@ -26,7 +26,7 @@ library(ggplot2)
 
 
 ## inserire il percorso alla cartella
-path <- file.path("F:/workshop ESPOSOMA AIE giovani 2021")
+path <- file.path("F:/EXPOSOME-workshop-AIE2021--main")
 
 # rexposome richiede in input tre diversi dataset:  
 # 1.	Description Data
@@ -44,14 +44,14 @@ View(ee)
 pp <- read.csv(phenotype, header = TRUE)
 View(pp)
 
-# Il description data file avr‡ sulle righe le esposizioni
+# Il description data file avr√† sulle righe le esposizioni
 
 ## ----assegniamo nome delle righe a description file---------------------------
 rownames(dd) <- dd$Exposure
 dd$Exposure <- NULL
 
 
-# L'exposures data file avr‡ una colonna per ogni esposizione definita nel description file
+# L'exposures data file avr√† una colonna per ogni esposizione definita nel description file
 # e sulle righe gli individui
 
 ## ----assegniamo nome delle righe a exposures file-----------------------------
@@ -60,7 +60,7 @@ ee$idnum <- NULL
 
 
 
-# Il phenotype data file avr‡ una colonna per ogni fenotipo/outcome
+# Il phenotype data file avr√† una colonna per ogni fenotipo/outcome
 # e sulle righe gli stessi individui dell'exposures data file
 
 ## ----assegniamo nome delle righe a phenotype file-----------------------------
@@ -120,13 +120,13 @@ win.graph(10, 10, 12)
 plotMissings(exp, set = "phenotypes")
 
 #                             Missing Data imputation
-# L'imputazione Ë effettuata con la funzione imputation
+# L'imputazione √® effettuata con la funzione imputation
 
 # exp_imp=imputation(exp)
 
 #                               Exposures Normality
 
-# ## ----Test di Shapiro-Wilk per la verifica della normalit‡---------------------
+# ## ----Test di Shapiro-Wilk per la verifica della normalit√†---------------------
  nm <- normalityTest(exp,th=0.05) 
  nm
 # table(nm$normality)
@@ -142,14 +142,14 @@ plotMissings(exp, set = "phenotypes")
  
 
 #                               Exposures transformation
-## Trasformo le variabili non normali tramite trasformazione pi˘ appropriata (sqrt, log, exp, inv..) 
+## Trasformo le variabili non normali tramite trasformazione pi√π appropriata (sqrt, log, exp, inv..) 
 
 exp_trans=trans(exp, sqrt, select="Dens")
 exp_trans
 
 
 #                              Exposures standardization
-# La standardizzazione Ë effettuata con la funzione standardize
+# La standardizzazione √® effettuata con la funzione standardize
 
 exp_std <- standardize(exp_trans, select ="Dens" )
 exp_std
@@ -208,7 +208,7 @@ plotCorrelation(exp_cr, type = "matrix")
 
 
 #                               Exposures PCA
-# Una volta che le esposizioni sono state standardizzate, si puÚ procedere con 
+# Una volta che le esposizioni sono state standardizzate, si pu√≤ procedere con 
 # l'analisi delle componenti principali usando il metodo pca. 
 # 
 
@@ -267,7 +267,7 @@ exp_c@model$model$dist.method
 # numero individui in ognuno dei 3 cluster
 table(classification(exp_c))
 
-## ----Per ogni cluster Ë plottato il profilo di esposizione-----------------------------
+## ----Per ogni cluster √® plottato il profilo di esposizione-----------------------------
 windows(30,30,18)
 plotClassification(exp_c)
 
@@ -291,8 +291,8 @@ plotClassification(exp_c)
 # Attraverso il parametro formula possiamo indicare il fenotipo che vogliamo testare
 # come outcome e le covariate che vogliamo includere nel modello.
 
-# La correzione per confronti multipli nell'exwas Ë effettuata calcolando 
-# il numero di test effettivi e la soglia di significativit‡ (Li and Ju, https://doi.org/10.1038/sj.hdy.6800717).
+# La correzione per confronti multipli nell'exwas √® effettuata calcolando 
+# il numero di test effettivi e la soglia di significativit√† (Li and Ju, https://doi.org/10.1038/sj.hdy.6800717).
 
 bl_ew <- exwas(exp, formula = blood_pre~sex+age, family = "gaussian",tef = TRUE)
 head(extract(bl_ew))
@@ -366,15 +366,15 @@ plotPHE(exp_pca)
 ##            Analisi multivariata:  Multivariate-Exposome-wide Association Study (ExWAS)
 # La funzione mexwas permette di testare un'analisi di associazione multivariata
 # tra l'esposoma e un outcome usando Elastic-Net regularized generalized linear models
-# L'obiettivo Ë trovare il gruppo di esposizioni maggiormente associate con l'outcome.
+# L'obiettivo √® trovare il gruppo di esposizioni maggiormente associate con l'outcome.
 
 bl_mew <- mexwas(exp, phenotype = "blood_pre", family = "gaussian")
 we_mew <- mexwas(exp, phenotype = "wheezing", family = "binomial")
 
 # Con il metodo plotExwas possiamo plottare il coefficiente per ogni esposizione.
-# Il metodo fornisce una mappa colore che evidenzia i coefficienti pi˘ interessanti.
+# Il metodo fornisce una mappa colore che evidenzia i coefficienti pi√π interessanti.
 # Le due colonne della heat map corrispondono al lambda con minimo errore medio in crossvalidazione 
-# e al lambda che fornisce il modello pi˘ regolarizzato il modello pi˘ regolarizzato 
+# e al lambda che fornisce il modello pi√π regolarizzato il modello pi√π regolarizzato 
 win.graph(10, 10, 12)
 plotExwas(bl_mew, we_mew) + ylab("") +
   ggtitle("Exposome Association Study - Multivariate Approach")
