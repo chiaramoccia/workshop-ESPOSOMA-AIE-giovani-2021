@@ -284,7 +284,7 @@ plotClassification(exp_c)
 
 #                                   EXPOSURES ASSOCIATIONS
 
-#                 Analisi univariata: Exposome-wide Association Study (ExWAS)
+#                           Exposome-wide Association Study (ExWAS)
 
 # Il metodo exwas performa un exposome wide association study
 # testando l'associazione tra una esposizione e un fenotipo/outcome nell'ExposomeSet.
@@ -363,9 +363,9 @@ plotPHE(exp_pca)
 
 
 
-##            Analisi multivariata:  Multivariate-Exposome-wide Association Study (ExWAS)
-# La funzione mexwas permette di testare un'analisi di associazione multivariata
-# tra l'esposoma e un outcome usando Elastic-Net regularized generalized linear models
+##                    Multi-Exposome-wide Association Study (MExWAS)
+# La funzione mexwas permette di testare l'associazione tra l'esposoma e un outcome 
+# usando Elastic-Net regularized generalized linear models.
 # L'obiettivo è trovare il gruppo di esposizioni maggiormente associate con l'outcome.
 
 bl_mew <- mexwas(exp, phenotype = "blood_pre", family = "gaussian")
