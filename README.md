@@ -14,22 +14,6 @@ This repository contains R scripts and materials from a hands-on workshop introd
 - Provide a practical guide to using the **`rexposome`** R package
 - Explore data preprocessing, visualization, dimensionality reduction (PCA), clustering, and Exposome-Wide Association Studies (ExWAS)
 
-## 🧰 Tools & Packages
-## Requirements
-
-- R (version 4.1.0 used during the workshop, year 2021)  
-- R packages:
-  - `rexposome` (version 1.15.0)  (https://bioconductor.org/packages/rexposome/): R package for exposome data analysis
-  - `ggplot2`  
-  - `BiocManager`  
-
-To install `rexposome`:
-
-```r
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-
-BiocManager::install("rexposome")
 
 
 ## 📁 Dataset Structure
