@@ -13,7 +13,7 @@
 
 ## Requirements
 
-- R (version 4.1.x used during the workshop, year 2021)  
+- R (version 4.1.0 used during the workshop, year 2021)  
 - R packages:
   - `rexposome` (version 1.15.0)  
   - `ggplot2`  
