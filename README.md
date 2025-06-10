@@ -8,6 +8,7 @@
 📅 **AIE (Italian Epidemiology Association) Young Researchers Conference – Autumn 2021**  
 👩‍🔬 Chiara Moccia & Antonio D'Errico  
 🏛️ University of Turin – Department of Medical Sciences, Cancer Epidemiology Unit
+This repository contains R scripts and materials from a hands-on workshop introducing the exposome approach in epidemiological research, with practical examples using the `rexposome` package.
 
 ---
 
@@ -28,7 +29,6 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
 BiocManager::install("rexposome")
 ```
 
-This repository contains R scripts and materials from a hands-on workshop introducing the exposome approach in epidemiological research, with practical examples using the `rexposome` package.
 
 ---
 
