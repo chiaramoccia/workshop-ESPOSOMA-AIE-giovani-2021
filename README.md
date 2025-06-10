@@ -8,7 +8,16 @@
 📅 **AIE (Italian Epidemiology Association) Young Researchers Conference – Autumn 2021**  
 👩‍🔬 Chiara Moccia & Antonio D'Errico  
 🏛️ University of Turin – Department of Medical Sciences, Cancer Epidemiology Unit
+
 This repository contains R scripts and materials from a hands-on workshop introducing the exposome approach in epidemiological research, with practical examples using the `rexposome` package.
+
+---
+
+## 🎯 Workshop Objectives
+
+- Introduce the concept of the **exposome** and its relevance in epidemiology
+- Provide a practical guide to using the **`rexposome`** R package
+- Explore data preprocessing, visualization, dimensionality reduction (PCA), clustering, and Exposome-Wide Association Studies (ExWAS)
 
 ---
 
@@ -30,13 +39,6 @@ BiocManager::install("rexposome")
 ```
 
 
----
-
-## 🎯 Workshop Objectives
-
-- Introduce the concept of the **exposome** and its relevance in epidemiology
-- Provide a practical guide to using the **`rexposome`** R package
-- Explore data preprocessing, visualization, dimensionality reduction (PCA), clustering, and Exposome-Wide Association Studies (ExWAS)
 
 
 
