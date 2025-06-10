@@ -17,7 +17,7 @@ This repository contains R scripts and materials from a hands-on workshop introd
 ## 🧰 Tools & Packages
 ## Requirements
 
-- R (version 4.1.x used during the workshop, year 2021)  
+- R (version 4.1.0 used during the workshop, year 2021)  
 - R packages:
   - `rexposome` (version 1.15.0)  (https://bioconductor.org/packages/rexposome/): R package for exposome data analysis
   - `ggplot2`  
