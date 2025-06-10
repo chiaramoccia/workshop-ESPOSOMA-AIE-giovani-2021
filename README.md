@@ -26,7 +26,7 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
 BiocManager::install("rexposome")
-
+```r
 This repository contains R scripts and materials from a hands-on workshop introducing the exposome approach in epidemiological research, with practical examples using the `rexposome` package.
 
 ---
