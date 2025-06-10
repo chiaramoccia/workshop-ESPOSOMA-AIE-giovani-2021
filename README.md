@@ -1,3 +1,8 @@
+
+
+
+
+
 # 🧪 Workshop: Introduction to the Exposome Approach in Epidemiology Using R
 
 📅 **AIE (Italian Epidemiology Association) Young Researchers Conference – Autumn 2021**  
@@ -6,7 +11,25 @@
 
 ---
 
+## Requirements
+
+- R (version 4.1.x used during the workshop, year 2021)  
+- R packages:
+  - `rexposome` (version 1.15.0)  
+  - `ggplot2`  
+  - `BiocManager`  
+
+To install `rexposome`:
+
+```r
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("rexposome")
+
 This repository contains R scripts and materials from a hands-on workshop introducing the exposome approach in epidemiological research, with practical examples using the `rexposome` package.
+
+---
 
 ## 🎯 Workshop Objectives
 
